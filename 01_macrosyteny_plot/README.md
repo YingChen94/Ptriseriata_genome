@@ -76,11 +76,11 @@ rm tempfile
 cat *.chr > all.chr
 ```
 
-**Step 2.2**: create `.simple` file: extract synteny blocks spanning at least 3 BUSCO genes using R script `synteny_block_id.R`. Note that the synteny is pairwise comparison and the order depends on the phylogeny so that synteny plots can be placed right beside the phylogeny for context. 
+**Step 2.2**: Using R script `synteny_block_id.R` to create `.simple` and `.synteny` file. The codes extract synteny blocks spanning at least 3 BUSCO genes (both complete and fragmented). Note that the synteny is pairwise comparison and the order depends on the phylogeny so that synteny plots can be placed right beside the phylogeny for context. 
 
-**Step 2.3**: create `seqids` file (use chromosome names in the bed files). Note the order of frogs (each row) is the same as your phylogeny and the `layout` file; the order of chromosomes is based on your synteny so that they align well and look pretty.
+**Step 2.3**: Manually create `seqids` file (use chromosome names in the bed files). Note the order of frogs (each row) is the same as your phylogeny and the `layout` file; the order of chromosomes is based on your synteny so that they align well and look pretty.
 
-**Step 2.4**: manually create the `layout` file, make sure there is no blank line in the end. <br>
+**Step 2.4**: Manually create the `layout` file, make sure there is no blank line in the end. 
 
 **Step 2.5**: run the code:
 ```bash
@@ -89,9 +89,9 @@ python -m jcvi.graphics.karyotype seqids layout --chrstyle=roundrect --nocircles
 ```
 Note: the length of the chromosomes on the plot depends on number of genes rather than the actual length of the chromosomes [link](https://github.com/tanghaibao/jcvi/issues/427)
 
-**Step 2.6**: based on the synteny, now you can add color to the synteny blocks to make the plot prettier. You need a `frog_synteny_color.csv` to list the color and coordinates of the synteny blocks (Note if one species have multiple blocks with the same color, separate the coordinates with "," no space). The codes to write new `.simple.color` are in `synteny_block_color.R`.
+**Step 2.6**: based on the synteny, now you can add color to the synteny blocks to make the plot prettier. You need a `frog_synteny_color.csv` to list the color and coordinates of the synteny blocks (Note if one species have multiple blocks with the same color, separate the coordinates with "," no space). The codes to write new `.simple.color` are in `synteny_block_color.R`. 
 
-Now run the final code with new file `layout_color`:
+Now run the final code with modified file `layout_color`:
 ```bash
 python -m jcvi.graphics.karyotype seqids layout_color --chrstyle=roundrect --nocircles 
 #--format=png --outfile=karyotype.png

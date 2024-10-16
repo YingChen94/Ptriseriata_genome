@@ -130,5 +130,5 @@ while read p; do
     grep -e "Complete" -e "Duplicated" -e "Fragmented" $p/run_tetrapoda_odb10/full_table.tsv | awk  -v OFS='\t' -v var="${PREF}_" '{print $1,var $3}' | sed 's/:/b/g' >> BUSCOgeneID_SppSeqName.list
 done < /project/lougheedlab/chorus/05_comparative_genomics/04_PanSyn/data_BUSCO_29frogs/frog_folder.list
 ```
-
+The rest of the codes see folder `rebel_genes`.
 

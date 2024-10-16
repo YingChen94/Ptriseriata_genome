@@ -1,17 +1,19 @@
+# scripts to count percent of BUSCO genes with 1,2,3... clusters
+
 rm(list=ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 # count number of clusters for each BUSCO gene
 
 # read a file: BUSCO_ID and its position info on each species
-busco <- read.table("../01_prep_BUSCO_dataset/BUSCOgeneID_SppSeqName.list",header=T)
+busco <- read.table("data/BUSCOgeneID_SppSeqName.list",header=T)
 colnames(busco) <- c("BUSCO_ID","Gene")
 head(busco)
 length(unique(busco$BUSCO_ID))
 # total 5233 BUSCO genes (77 BUSCO genes are missing in all species)
 
 # create a dataset to store BUSCO ID and its corresponding cluster number
-clusters <- read.table("../../SynNet-k5s5m15_2cols_infoclusters",header=T)
+clusters <- read.table("SynNet-k5s5m15_2cols_infoclusters",header=T)
 cluster_busco <- left_join(clusters,busco,by="Gene")[,c(3,2)]
 cluster_busco <- left_join(busco,clusters,by="Gene")[,c(1,3)]
 cluster_busco <- cluster_busco[order(cluster_busco$BUSCO_ID),]

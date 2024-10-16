@@ -53,23 +53,7 @@ species_annotation <- data.frame(
   Species = species_order,
   Suborder = c(
     rep("Neobatrachia", 18),
-    rep("Mesobatrachia", 8),
-    rep("Archaeobatrachia", 3))
-)
-species_annotation <- data.frame(
-  Species = species_order,
-  Suborder = c(
-    rep("Neobatrachia", 18),
     rep("Archaeobatrachia", 11))
-)
-species_annotation <- data.frame(
-  Species = species_order,
-  Suborder = c(
-    rep("Hyloidea", 10),
-    rep("Ranoidea", 6),
-    rep("Neobatrachia", 2),
-    rep("Mesobatrachia", 8),
-    rep("Archaeobatrachia", 3))
 )
 head(species_annotation)
 colnames(species_annotation)[2] <- " "
@@ -83,35 +67,13 @@ profiles <- as.data.frame.matrix(table(data$Cluster,data$Species))
 head(profiles)
 
 # plot
-png("profile_superorder_2.png", units = "in", width = 8, height = 5, res=400)
+png("profile_superorder.png", units = "in", width = 8, height = 5, res=400)
 plot_profiles(
   profiles, 
   species_annotation, 
   cluster_species = species_order, 
   dist_function = labdsv::dsvdis,
   dist_params = list(index = "ruzicka")
-)
-# take a bit of time
-dev.off()
-
-
-# Find group-specific clusters
-gs_clusters <- find_GS_clusters(profiles, species_annotation)
-head(gs_clusters)
-# How many family-specific clusters are there?
-nrow(gs_clusters)
-
-# Filter profiles matrix to only include group-specific clusters
-idx <- rownames(profiles) %in% gs_clusters$Cluster
-p_gs <- profiles[idx, ]
-
-# Plot heatmap
-png("profile_superfamily_gs.png", units = "in", width = 8, height = 5, res=400)
-plot_profiles(
-  p_gs, species_annotation, 
-  cluster_species = species_order, 
-  cluster_columns = TRUE,
-  #border_color=NA,
 )
 dev.off()
 

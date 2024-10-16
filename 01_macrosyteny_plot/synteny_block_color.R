@@ -42,8 +42,7 @@ speciesLIST <- c("JT22M","Hsar","Debr","Rimi",
                  "Hboe","Dpic","Bbom","Atru")
 
 # read the csv file with color info
-#col_coord_list <- read.csv("synteny_files_v2_timetree/frog_synteny_color.csv",header=T)
-col_coord_list <- read.csv("synteny_files_sex_chr/sex_chr_color.csv",header=T)
+col_coord_list <- read.csv("synteny_files_v2_timetree/frog_synteny_color.csv",header=T)
 
 # add color to the synteny file
 for (k in 2:(length(syntenyLIST)+1)) { # go through each pairwise synteny

@@ -1,0 +1,47 @@
+# y, xstart, xend, rotation, color, label, va,  bed
+ .95,     .1,    .9,       0, black, Ptri, top, ../frog_bed_files/JT22M_Mar12.bed
+ .91,     .1,    .9,       0, black, Hsar, top, ../frog_bed_files/Hsar.bed
+ .87,     .1,    .9,       0, black, Debr, top, ../frog_bed_files/Debr.bed
+ .83,     .1,    .9,       0, black, Rimi, top, ../frog_bed_files/Rimi.bed
+ .79,     .1,    .9,       0, black, Bbuf, top, ../frog_bed_files/Bbuf.bed
+ .75,     .1,    .9,       0, black, Lfus, top, ../frog_bed_files/Lfus.bed
+ .71,     .1,    .9,       0, black, Epus, top, ../frog_bed_files/Epus.bed
+ .67,     .1,    .9,       0, black, Ecoq, top, ../frog_bed_files/Ecoq.bed
+ .63,     .1,    .9,       0, black, Pcor, top, ../frog_bed_files/Pcor.bed
+ .59,     .1,    .9,       0, black, Mfle, top, ../frog_bed_files/Mfle.bed
+ .55,     .1,    .9,       0, black, Rkuk, top, ../frog_bed_files/Rkuk.bed
+ .51,     .1,    .9,       0, black, Rtem, top, ../frog_bed_files/Rtem.bed
+ .47,     .1,    .9,       0, black, Lsyl, top, ../frog_bed_files/Lsyl.bed
+ .43,     .1,    .9,       0, black, Pads, top, ../frog_bed_files/Pads.bed
+ .39,     .1,    .9,       0, black, Gcar, top, ../frog_bed_files/Gcar.bed
+ .35,     .1,    .9,       0, black, Pcul, top, ../frog_bed_files/Pcul.bed
+ .31,     .1,    .9,       0, black, Llei, top, ../frog_bed_files/Llei.bed
+ .27,     .1,    .9,       0, black, Sbom, top, ../frog_bed_files/Sbom.bed
+ .23,     .1,    .9,       0, black, Xtro, top, ../frog_bed_files/Xtro.bed
+ .19,     .1,    .9,       0, black, Hboe, top, ../frog_bed_files/Hboe.bed
+ .15,     .1,    .9,       0, black, Dpic, top, ../frog_bed_files/Dpic.bed
+ .11,     .1,    .9,       0, black, Bbom, top, ../frog_bed_files/Bbom.bed
+ .07,     .1,    .9,       0, black, Atru, top, ../frog_bed_files/Atru.bed
+# edges
+e, 0, 1, JT22M_Hsar.simple.color
+e, 1, 2, Hsar_Debr.simple.color
+e, 2, 3, Debr_Rimi.simple.color
+e, 3, 4, Rimi_Bbuf.simple.color
+e, 4, 5, Bbuf_Lfus.simple.color
+e, 5, 6, Lfus_Epus.simple.color
+e, 6, 7, Epus_Ecoq.simple.color
+e, 7, 8, Ecoq_Pcor.simple.color
+e, 8, 9, Pcor_Mfle.simple.color
+e, 9, 10, Mfle_Rkuk.simple.color
+e, 10, 11, Rkuk_Rtem.simple.color
+e, 11, 12, Rtem_Lsyl.simple.color
+e, 12, 13, Lsyl_Pads.simple.color
+e, 13, 14, Pads_Gcar.simple.color
+e, 14, 15, Gcar_Pcul.simple.color
+e, 15, 16, Pcul_Llei.simple.color
+e, 16, 17, Llei_Sbom.simple.color
+e, 17, 18, Sbom_Xtro.simple.color
+e, 18, 19, Xtro_Hboe.simple.color
+e, 19, 20, Hboe_Dpic.simple.color
+e, 20, 21, Dpic_Bbom.simple.color
+e, 21, 22, Bbom_Atru.simple.color

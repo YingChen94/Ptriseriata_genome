@@ -70,21 +70,6 @@ species_annotation <- data.frame(
   Species = species_order,
   Suborder = c(
     rep("Neo_Hyloidea", 10),
-    rep("Neo_Ranoidea", 6),
-    rep("Neobatrachia_split", 2),
-    rep("Mesobatrachia", 8),
-    rep("Archaeobatrachia", 3)))
-species_annotation <- data.frame(
-  Species = species_order,
-  Suborder = c(
-    rep("Neo_Hyloidea", 10),
-    rep("Neo_Ranoidea", 6),
-    rep("Neobatrachia_split", 2),
-    rep("Archaeobatrachia", 11)))
-species_annotation <- data.frame(
-  Species = species_order,
-  Suborder = c(
-    rep("Neo_Hyloidea", 10),
     rep("Neobatrachia", 8),
     rep("Archaeobatrachia", 11)))
 head(species_annotation)
@@ -100,21 +85,17 @@ gene_df_suborder[gene_df_suborder=="Neobatrachia"] <- "A"
 #----------
 
 # read BUSCO_ID and corresponding chromosome for each species
-busco_pos_chr_element <- read.csv("../01_prep_BUSCO_dataset/busco_pos_chr_element.csv")
+busco_pos_chr_element <- read.csv("data/busco_pos_chr_element.csv")
 # get cluster number from BUSCO ID
 busco_id <- "275471at32523"
 (id <- busco_pos_chr_element$Cluster[which(busco_pos_chr_element$BUSCO_ID==busco_id)])
 id <- unlist(strsplit(id,,split=", "))
-# id <- c("5367","3529","5300","4058","5531","5379")
+# plot
 png("gene_275471at32523.png", units = "in", width = 6, height =5, res=400)
 plot_network(network, clusters, 
              cluster_id = id, 
              color_by = gene_df_suborder)
 dev.off()
-plot_network(network, clusters, 
-             cluster_id = id, 
-             color_by = gene_df_fam)
-
 
 
 

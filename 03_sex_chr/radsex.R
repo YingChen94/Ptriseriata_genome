@@ -66,12 +66,5 @@ radsex_map_manhattan_ylabel <- function (input_file, chromosomes_file = NA, dete
 radsex_map_manhattan_ylabel("60indv/alignment_results.tsv",chromosomes_file="60indv/chr.txt")
 #dev.off()
 
-# plot for chr1
-#png("60indv/manhattan_chr1.png", units = "in", width = 8, height = 5, res=400)
-radsex_map_region("60indv/alignment_results.tsv",
-                  region = "Chr1",
-                  bias_colors = c("dodgerblue2", "black", "firebrick1"),
-                  chromosomes_file = "60indv/chr.txt")
-#dev.off()
 
 

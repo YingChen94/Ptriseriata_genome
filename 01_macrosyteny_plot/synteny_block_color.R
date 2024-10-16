@@ -1,6 +1,5 @@
 # scripts to identify BUSCO synteny blocks
 # Ying Chen
-# March 2024
 
 library(dplyr)
 
@@ -70,8 +69,7 @@ for (k in 2:(length(syntenyLIST)+1)) { # go through each pairwise synteny
   
   dat_simple_col <- synteny_to_color[,c(-1,-4,-5,-6,-9,-10,-13)] # delete chromosome column and number of genes columns
   cat("write out",paste0(speciesLIST[k-1],"_",speciesLIST[k],".simple.color",sep=""),"\n")
-  #write.table(dat_simple_col,paste0("synteny_files_v2_timetree/",speciesLIST[k-1],"_",speciesLIST[k],".simple.color",sep=""),sep = "\t", row.names=FALSE, col.names=FALSE, quote=FALSE)
-  write.table(dat_simple_col,paste0("synteny_files_sex_chr/",speciesLIST[k-1],"_",speciesLIST[k],".simple.color",sep=""),sep = "\t", row.names=FALSE, col.names=FALSE, quote=FALSE)
+  write.table(dat_simple_col,paste0("synteny_files_v2_timetree/",speciesLIST[k-1],"_",speciesLIST[k],".simple.color",sep=""),sep = "\t", row.names=FALSE, col.names=FALSE, quote=FALSE)
 }
 
 

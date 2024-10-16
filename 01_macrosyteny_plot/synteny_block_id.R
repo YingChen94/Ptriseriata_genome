@@ -1,6 +1,5 @@
 # scripts to identify BUSCO synteny blocks
 # Ying Chen
-# Mar 2024
 
 library(dplyr)
 
